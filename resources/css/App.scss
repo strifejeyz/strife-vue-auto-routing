@@ -1,0 +1,74 @@
+/**
+ * Variables
+ */
+$bgcolor:    lightblue;
+$textcolor:  darkblue;
+$fontsize:   16px;
+$fontfamily: cursive;
+$linkcolor:  #000000;
+$boxshadow:  0 3px 3px #d1d1d1;
+$softborder: 1px solid #d1d1d1;
+
+
+/**
+ * Mixins
+ */
+@mixin clear-space() {
+    padding: 0;
+    margin: 0;
+}
+@mixin container() {
+    width: 80%;
+    margin: auto;
+}
+@mixin text-center {
+    text-align: center
+}
+
+
+
+/**
+ * Styling
+ */
+body {
+    @include clear-space;
+    font-size: $fontsize;
+    font-family: $fontfamily;
+}
+.navigation {
+    background: #ffffff;
+    box-shadow: $boxshadow;
+
+    & .links {
+        display: flex
+    }
+    & a{
+        display: block;
+        padding: 7px;
+        text-decoration: none;
+        color: $linkcolor;
+    }
+}
+.container {
+    @include container
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px 0;
+    border-top: $softborder;
+    @include text-center
+}
+.flex {
+    display: flex;
+}
+.flex-evenly {
+    display: flex;
+    justify-content: space-evenly
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between
+}
